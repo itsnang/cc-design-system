@@ -50,7 +50,6 @@ const Dialog: React.FC<DialogProps> = ({
     cancelText,
     onConfirm,
     onCancel,
-    showCancel = false,
     persistent = false,
     icon,
     autoClose,
@@ -82,64 +81,61 @@ const Dialog: React.FC<DialogProps> = ({
     <Modal
       show={isVisible}
       onClose={persistent ? () => {} : onClose}
-      className="max-w-[27.5rem] mt-28 p-4"
+      className="max-w-[28rem] p-6"
     >
-      <div className="flex flex-col items-center gap-4">
-        {icon || <IconComponent />}
-
+      <div className="flex flex-col items-center text-center space-y-6">
+        {/* Title */}
         {title && (
           <Typography
             variant="h4"
             responsive
-            className="text-center text-foreground"
+            className="text-gray-900 font-semibold max-w-[18rem]"
           >
             {title}
           </Typography>
         )}
 
+        {/* Icon positioned after title */}
+        {icon || <IconComponent className="w-16 h-16" />}
+
+        {/* Message */}
         {message && (
           <Typography
             variant="body2"
             responsive
-            className="text-center text-foreground"
+            className="text-gray-700 leading-relaxed px-2"
           >
             {message}
           </Typography>
         )}
 
+        {/* Custom content */}
         {content && (
-          <div className="text-center w-full">
+          <div className="w-full">
             {React.isValidElement(content) ? (
               content
             ) : (
-              <Typography
-                variant="body3"
-                responsive
-                className="text-center text-foreground"
-              >
+              <Typography variant="body3" responsive className="text-gray-700">
                 {content}
               </Typography>
             )}
           </div>
         )}
 
-        <div className="flex flex-col gap-3 w-full items-center">
-          <CustomButton
-            roundedFull
-            className="w-full max-w-[20rem]"
-            onClick={handleConfirm}
-          >
-            <Typography variant="base-medium" className="text-inherit">
+        {/* Buttons */}
+        <div className="flex flex-col gap-3 w-full">
+          <CustomButton roundedFull onClick={handleConfirm}>
+            <Typography variant="base-medium" className="text-white">
               {finalConfirmText}
             </Typography>
           </CustomButton>
 
-          {showCancel && (
+          {cancelText && (
             <CustomButton
               roundedFull
               variant="secondary"
-              className="w-full max-w-[20rem] border-0 text-muted-foreground"
               onClick={handleCancel}
+              className="border-0 text-gray-800"
             >
               <Typography variant="base" className="text-inherit">
                 {finalCancelText}

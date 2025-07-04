@@ -11,7 +11,6 @@ export interface DialogOptions {
   icon?: ReactNode;
   onConfirm?: () => void | Promise<void>;
   onCancel?: () => void;
-  showCancel?: boolean;
   autoClose?: number;
   persistent?: boolean;
   className?: string;
