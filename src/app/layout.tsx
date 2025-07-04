@@ -9,6 +9,9 @@ const mulish = Mulish({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
+// Noto Sans Khmer will be loaded via CSS @import in globals.css
+// due to Next.js font limitations with Khmer subset
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],

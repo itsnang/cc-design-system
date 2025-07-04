@@ -5,6 +5,7 @@ import { Modal } from "@/components/modal";
 import { DialogOptions, DialogType } from "@/type/dialog.type";
 import { Icons } from "./icons";
 import { CustomButton } from "./custom-button";
+import { Typography } from "@/components/ui/typography";
 
 interface DialogProps {
   id: string;
@@ -87,12 +88,40 @@ const Dialog: React.FC<DialogProps> = ({
         {icon || <IconComponent />}
 
         {title && (
-          <h4 className="text-2xl text-center text-foreground">{title}</h4>
+          <Typography
+            variant="h4"
+            responsive
+            className="text-center text-foreground"
+          >
+            {title}
+          </Typography>
         )}
 
-        {message && <p className="text-center text-foreground">{message}</p>}
+        {message && (
+          <Typography
+            variant="body2"
+            responsive
+            className="text-center text-foreground"
+          >
+            {message}
+          </Typography>
+        )}
 
-        {content && <div className="text-center w-full">{content}</div>}
+        {content && (
+          <div className="text-center w-full">
+            {React.isValidElement(content) ? (
+              content
+            ) : (
+              <Typography
+                variant="body3"
+                responsive
+                className="text-center text-foreground"
+              >
+                {content}
+              </Typography>
+            )}
+          </div>
+        )}
 
         <div className="flex flex-col gap-3 w-full items-center">
           <CustomButton
@@ -100,7 +129,9 @@ const Dialog: React.FC<DialogProps> = ({
             className="w-full max-w-[20rem]"
             onClick={handleConfirm}
           >
-            {finalConfirmText}
+            <Typography variant="base-medium" className="text-inherit">
+              {finalConfirmText}
+            </Typography>
           </CustomButton>
 
           {showCancel && (
@@ -110,7 +141,9 @@ const Dialog: React.FC<DialogProps> = ({
               className="w-full max-w-[20rem] border-0 text-muted-foreground"
               onClick={handleCancel}
             >
-              {finalCancelText}
+              <Typography variant="base" className="text-inherit">
+                {finalCancelText}
+              </Typography>
             </CustomButton>
           )}
         </div>

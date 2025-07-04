@@ -130,4 +130,379 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Typography System - English (Mulish) */
+  
+  /* Headings */
+  .typography-h1 {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 44px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h1-mobile {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 28px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h2 {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 36px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h2-mobile {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h3 {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 32px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h3-mobile {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h4 {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h4-mobile {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h5 {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-h5-mobile {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  /* Body Text */
+  .typography-body1 {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0px;
+  }
+  
+  .typography-body1-mobile {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+  }
+  
+  .typography-body2 {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0px;
+  }
+  
+  .typography-body2-mobile {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+  }
+  
+  .typography-body3 {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+  
+  .typography-body3-mobile {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0px;
+  }
+  
+  /* Base Text */
+  .typography-base {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-base-mobile {
+    font-family: var(--font-sans);
+    font-weight: 400; /* Regular */
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-base-medium {
+    font-family: var(--font-sans);
+    font-weight: 500; /* Medium */
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-base-medium-mobile {
+    font-family: var(--font-sans);
+    font-weight: 500; /* Medium */
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-base-bold {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-base-bold-mobile {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  /* Label Text */
+  .typography-label {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+  
+  .typography-label-mobile {
+    font-family: var(--font-sans);
+    font-weight: 700; /* Bold */
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+
+
+
+  /* Responsive Typography Classes */
+  @media (max-width: 768px) {
+    .typography-h1-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 28px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h2-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h3-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h4-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h5-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-body1-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0px;
+    }
+    .typography-body2-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0px;
+    }
+    .typography-body3-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0px;
+    }
+    .typography-base-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-base-medium-responsive {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-base-bold-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-label-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 12px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .typography-h1-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 44px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h2-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h3-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 32px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h4-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-h5-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-body1-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0px;
+    }
+    .typography-body2-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0px;
+    }
+    .typography-body3-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0px;
+    }
+    .typography-base-responsive {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-base-medium-responsive {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-base-bold-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+    .typography-label-responsive {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14px;
+      line-height: normal;
+      letter-spacing: 0px;
+    }
+  }
 }

@@ -80,7 +80,7 @@ export default function DialogExamplesPage() {
     });
 
     setLastResult(
-      confirmed ? "User confirmed deletion" : "User cancelled deletion",
+      confirmed ? "User confirmed deletion" : "User cancelled deletion"
     );
   };
 
@@ -161,13 +161,6 @@ export default function DialogExamplesPage() {
         });
       }
     }, 2000);
-  };
-
-  // Multiple dialogs
-  const showMultipleDialogs = () => {
-    dialog.info("First dialog");
-    setTimeout(() => dialog.warning("Second dialog"), 500);
-    setTimeout(() => dialog.success("Third dialog"), 1000);
   };
 
   return (
@@ -495,20 +488,6 @@ export default function DialogExamplesPage() {
               >
                 {isLoading ? "Processing..." : "🔄 Loading Example"}
               </CustomButton>
-              <Button
-                onClick={showMultipleDialogs}
-                variant="secondary"
-                className="h-16 text-base font-medium rounded-xl"
-              >
-                📚 Multiple Dialogs
-              </Button>
-              <Button
-                onClick={() => dialog.closeAll()}
-                variant="ghost"
-                className="h-16 text-base font-medium rounded-xl border-2 border-dashed border-gray-300 hover:border-gray-400"
-              >
-                ❌ Close All Dialogs
-              </Button>
             </div>
           </section>
 
