@@ -44,7 +44,7 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
       setDialogs((prev) => [...prev, newDialog]);
       return id;
     },
-    [],
+    []
   );
 
   const close = useCallback((id: string): void => {
@@ -64,7 +64,7 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
 
       return addDialog("success", dialogOptions);
     },
-    [addDialog],
+    [addDialog]
   );
 
   const error = useCallback(
@@ -76,7 +76,7 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
 
       return addDialog("error", dialogOptions);
     },
-    [addDialog],
+    [addDialog]
   );
 
   const warning = useCallback(
@@ -88,7 +88,7 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
 
       return addDialog("warning", dialogOptions);
     },
-    [addDialog],
+    [addDialog]
   );
 
   const info = useCallback(
@@ -100,7 +100,7 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
 
       return addDialog("info", dialogOptions);
     },
-    [addDialog],
+    [addDialog]
   );
 
   const confirm = useCallback(
@@ -108,7 +108,6 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
       return new Promise((resolve) => {
         const dialogOptions: DialogOptions = {
           title: "Confirm",
-          showCancel: true,
           confirmText: "Confirm",
           cancelText: "Cancel",
           ...options,
@@ -129,7 +128,7 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
         addDialog("confirm", dialogOptions);
       });
     },
-    [addDialog],
+    [addDialog]
   );
 
   const contextValue: DialogContextType = {

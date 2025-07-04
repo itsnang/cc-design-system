@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useFormContext, FORM_STEPS } from "../lib/context/form-context";
 import { submitMultiStepForm } from "../app/actions/form-actions";
@@ -40,8 +41,8 @@ export function useFormNavigation() {
       // Find the highest accessible step
       const accessibleStep = Math.max(
         ...Array.from({ length: step - 1 }, (_, i) => i + 1).filter(
-          canAccessStep,
-        ),
+          canAccessStep
+        )
       );
       const fallbackStep = FORM_STEPS.find((s) => s.id === accessibleStep);
       if (fallbackStep) {
@@ -142,7 +143,7 @@ export function useFormNavigation() {
   };
 
   // Initialize step based on current URL
-  const initializeStep = () => {
+  const initializeStep = useCallback(() => {
     const urlStep = getCurrentStepFromUrl();
 
     // Update context to match URL
@@ -154,7 +155,7 @@ export function useFormNavigation() {
     if (!canAccessStep(urlStep) && urlStep > 1) {
       // Redirect to the highest accessible step
       const accessibleSteps = FORM_STEPS.filter((step) =>
-        canAccessStep(step.id),
+        canAccessStep(step.id)
       );
       const lastAccessible = accessibleSteps[accessibleSteps.length - 1];
       if (lastAccessible && lastAccessible.id !== urlStep) {
@@ -162,7 +163,13 @@ export function useFormNavigation() {
         setCurrentStep(lastAccessible.id);
       }
     }
-  };
+  }, [
+    currentStep,
+    setCurrentStep,
+    canAccessStep,
+    router,
+    getCurrentStepFromUrl,
+  ]);
 
   return {
     // Navigation

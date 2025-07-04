@@ -36,7 +36,7 @@ export default function PreferencesPage() {
   // Initialize step on mount
   useEffect(() => {
     initializeStep();
-  }, []);
+  }, [initializeStep]);
 
   const form = useForm<PreferencesInfo>({
     resolver: zodResolver(preferencesSchema),
@@ -56,7 +56,7 @@ export default function PreferencesPage() {
   // Update context when form values change
   const handleFieldChange = (
     fieldName: keyof PreferencesInfo,
-    value: boolean,
+    value: boolean
   ) => {
     updateStepData({ [fieldName]: value });
   };
@@ -85,7 +85,7 @@ export default function PreferencesPage() {
                           field.onChange(checked);
                           handleFieldChange(
                             "notifications",
-                            checked as boolean,
+                            checked as boolean
                           );
                         }}
                       />
@@ -136,7 +136,7 @@ export default function PreferencesPage() {
                           field.onChange(checked);
                           handleFieldChange(
                             "marketingEmails",
-                            checked as boolean,
+                            checked as boolean
                           );
                         }}
                       />

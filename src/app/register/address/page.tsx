@@ -35,7 +35,7 @@ export default function AddressPage() {
   // Initialize step on mount
   useEffect(() => {
     initializeStep();
-  }, []);
+  }, [initializeStep]);
 
   const form = useForm<AddressInfo>({
     resolver: zodResolver(addressSchema),

@@ -34,7 +34,7 @@ export default function PersonalInfoPage() {
   // Initialize step on mount
   useEffect(() => {
     initializeStep();
-  }, []);
+  }, [initializeStep]);
 
   const form = useForm<PersonalInfo>({
     resolver: zodResolver(personalInfoSchema),
