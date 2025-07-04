@@ -1,103 +1,134 @@
-import Image from "next/image";
+import Link from 'next/link'
+import { Button } from '../components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
+import { ArrowRight, CheckCircle, Shield, Zap } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+            Multi-Step Registration
+          </h1>
+          <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            Experience a seamless registration process with automatic data persistence, 
+            route-based navigation, and beautiful UI components.
+          </p>
+          <div className="mt-8">
+            <Link href="/register">
+              <Button size="lg" className="px-8 py-3 text-lg">
+                Start Registration
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Features Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <Shield className="w-6 h-6 text-blue-600" />
+                <CardTitle>Data Persistence</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>
+                Your data is automatically saved to localStorage. Refresh the page, 
+                navigate between steps, or close your browser - your progress is preserved.
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <Zap className="w-6 h-6 text-green-600" />
+                <CardTitle>Route-Based Navigation</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>
+                Each step has its own URL. Use browser back/forward buttons, 
+                bookmark specific steps, or share direct links to form sections.
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="w-6 h-6 text-purple-600" />
+                <CardTitle>Smart Validation</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>
+                Real-time validation with Zod schemas, route protection, 
+                and step-by-step validation gates to ensure data integrity.
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Process Overview */}
+        <Card className="mb-16">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl">Registration Process</CardTitle>
+            <CardDescription>
+              Complete your registration in three simple steps
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-blue-600">1</span>
+                </div>
+                <h3 className="font-medium mb-2">Personal Information</h3>
+                <p className="text-sm text-gray-600">
+                  Provide your basic details: name, email, and phone number
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-green-600">2</span>
+                </div>
+                <h3 className="font-medium mb-2">Address Details</h3>
+                <p className="text-sm text-gray-600">
+                  Enter your complete address information for our records
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-purple-600">3</span>
+                </div>
+                <h3 className="font-medium mb-2">Preferences</h3>
+                <p className="text-sm text-gray-600">
+                  Set your communication preferences and accept terms
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Technical Stack */}
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Built With Modern Technologies</h2>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">Next.js 15</span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">React Hook Form</span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">Zod Validation</span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">shadcn/ui</span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">TypeScript</span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">Tailwind CSS</span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">localStorage</span>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
