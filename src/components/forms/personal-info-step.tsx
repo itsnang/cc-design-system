@@ -1,19 +1,39 @@
-"use client"
+"use client";
 
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { personalInfoSchema, type PersonalInfo } from "../../lib/validations/form-schemas"
-import { StepProps } from "../../lib/types"
-import { Button } from "../ui/button"
-import { Input } from "../ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  personalInfoSchema,
+  type PersonalInfo,
+} from "../../lib/validations/form-schemas";
+import { StepProps } from "../../lib/types";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../ui/form";
 
 /**
  * Personal Information step component
  * Collects user's basic personal details with validation
  */
-export function PersonalInfoStep({ onNext, currentData, updateData }: StepProps) {
+export function PersonalInfoStep({
+  onNext,
+  currentData,
+  updateData,
+}: StepProps) {
   const form = useForm<PersonalInfo>({
     resolver: zodResolver(personalInfoSchema),
     defaultValues: {
@@ -22,17 +42,17 @@ export function PersonalInfoStep({ onNext, currentData, updateData }: StepProps)
       email: currentData.email || "",
       phone: currentData.phone || "",
     },
-  })
+  });
 
   const onSubmit = (data: PersonalInfo) => {
-    updateData(data)
-    onNext()
-  }
+    updateData(data);
+    onNext();
+  };
 
   // Update parent data when form values change
   const handleFieldChange = (fieldName: keyof PersonalInfo, value: string) => {
-    updateData({ [fieldName]: value })
-  }
+    updateData({ [fieldName]: value });
+  };
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
@@ -57,8 +77,8 @@ export function PersonalInfoStep({ onNext, currentData, updateData }: StepProps)
                         placeholder="Enter your first name"
                         {...field}
                         onChange={(e) => {
-                          field.onChange(e)
-                          handleFieldChange('firstName', e.target.value)
+                          field.onChange(e);
+                          handleFieldChange("firstName", e.target.value);
                         }}
                       />
                     </FormControl>
@@ -78,8 +98,8 @@ export function PersonalInfoStep({ onNext, currentData, updateData }: StepProps)
                         placeholder="Enter your last name"
                         {...field}
                         onChange={(e) => {
-                          field.onChange(e)
-                          handleFieldChange('lastName', e.target.value)
+                          field.onChange(e);
+                          handleFieldChange("lastName", e.target.value);
                         }}
                       />
                     </FormControl>
@@ -101,8 +121,8 @@ export function PersonalInfoStep({ onNext, currentData, updateData }: StepProps)
                       placeholder="Enter your email address"
                       {...field}
                       onChange={(e) => {
-                        field.onChange(e)
-                        handleFieldChange('email', e.target.value)
+                        field.onChange(e);
+                        handleFieldChange("email", e.target.value);
                       }}
                     />
                   </FormControl>
@@ -123,8 +143,8 @@ export function PersonalInfoStep({ onNext, currentData, updateData }: StepProps)
                       placeholder="Enter your phone number"
                       {...field}
                       onChange={(e) => {
-                        field.onChange(e)
-                        handleFieldChange('phone', e.target.value)
+                        field.onChange(e);
+                        handleFieldChange("phone", e.target.value);
                       }}
                     />
                   </FormControl>
@@ -142,5 +162,5 @@ export function PersonalInfoStep({ onNext, currentData, updateData }: StepProps)
         </Form>
       </CardContent>
     </Card>
-  )
-} 
+  );
+}

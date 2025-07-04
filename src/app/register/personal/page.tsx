@@ -1,44 +1,60 @@
-"use client"
+"use client";
 
-import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { personalInfoSchema, type PersonalInfo } from '../../../lib/validations/form-schemas'
-import { useFormContext } from '../../../lib/context/form-context'
-import { useFormNavigation } from '../../../hooks/use-form-navigation'
-import { Button } from '../../../components/ui/button'
-import { Input } from '../../../components/ui/input'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../../components/ui/card'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../../../components/ui/form'
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  personalInfoSchema,
+  type PersonalInfo,
+} from "../../../lib/validations/form-schemas";
+import { useFormContext } from "../../../lib/context/form-context";
+import { useFormNavigation } from "../../../hooks/use-form-navigation";
+import { Button } from "../../../components/ui/button";
+import { Input } from "../../../components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../../../components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../../../components/ui/form";
 
 export default function PersonalInfoPage() {
-  const { formData, errors } = useFormContext()
-  const { nextStep, updateStepData, initializeStep } = useFormNavigation()
+  const { formData, errors } = useFormContext();
+  const { nextStep, updateStepData, initializeStep } = useFormNavigation();
 
   // Initialize step on mount
   useEffect(() => {
-    initializeStep()
-  }, [])
+    initializeStep();
+  }, []);
 
   const form = useForm<PersonalInfo>({
     resolver: zodResolver(personalInfoSchema),
     defaultValues: {
-      firstName: formData.firstName || '',
-      lastName: formData.lastName || '',
-      email: formData.email || '',
-      phone: formData.phone || '',
+      firstName: formData.firstName || "",
+      lastName: formData.lastName || "",
+      email: formData.email || "",
+      phone: formData.phone || "",
     },
-  })
+  });
 
   const onSubmit = (data: PersonalInfo) => {
-    updateStepData(data)
-    nextStep()
-  }
+    updateStepData(data);
+    nextStep();
+  };
 
   // Update context when form values change
   const handleFieldChange = (fieldName: keyof PersonalInfo, value: string) => {
-    updateStepData({ [fieldName]: value })
-  }
+    updateStepData({ [fieldName]: value });
+  };
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
@@ -63,8 +79,8 @@ export default function PersonalInfoPage() {
                         placeholder="Enter your first name"
                         {...field}
                         onChange={(e) => {
-                          field.onChange(e)
-                          handleFieldChange('firstName', e.target.value)
+                          field.onChange(e);
+                          handleFieldChange("firstName", e.target.value);
                         }}
                       />
                     </FormControl>
@@ -84,8 +100,8 @@ export default function PersonalInfoPage() {
                         placeholder="Enter your last name"
                         {...field}
                         onChange={(e) => {
-                          field.onChange(e)
-                          handleFieldChange('lastName', e.target.value)
+                          field.onChange(e);
+                          handleFieldChange("lastName", e.target.value);
                         }}
                       />
                     </FormControl>
@@ -107,8 +123,8 @@ export default function PersonalInfoPage() {
                       placeholder="Enter your email address"
                       {...field}
                       onChange={(e) => {
-                        field.onChange(e)
-                        handleFieldChange('email', e.target.value)
+                        field.onChange(e);
+                        handleFieldChange("email", e.target.value);
                       }}
                     />
                   </FormControl>
@@ -129,8 +145,8 @@ export default function PersonalInfoPage() {
                       placeholder="Enter your phone number"
                       {...field}
                       onChange={(e) => {
-                        field.onChange(e)
-                        handleFieldChange('phone', e.target.value)
+                        field.onChange(e);
+                        handleFieldChange("phone", e.target.value);
                       }}
                     />
                   </FormControl>
@@ -155,5 +171,5 @@ export default function PersonalInfoPage() {
         </Form>
       </CardContent>
     </Card>
-  )
-} 
+  );
+}

@@ -1,10 +1,10 @@
-import { FormProvider } from '../../lib/context/form-context'
-import { FormProgress } from '../../components/layout/form-progress'
+import { FormProvider } from "../../lib/context/form-context";
+import { FormProgress } from "../../components/layout/form-progress";
 
 export default function RegisterLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <FormProvider>
@@ -16,7 +16,8 @@ export default function RegisterLayout({
               Registration Form
             </h1>
             <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              Complete your registration step by step. Your progress is automatically saved.
+              Complete your registration step by step. Your progress is
+              automatically saved.
             </p>
           </div>
 
@@ -24,9 +25,7 @@ export default function RegisterLayout({
           <FormProgress />
 
           {/* Form content */}
-          <div className="flex justify-center">
-            {children}
-          </div>
+          <div className="flex justify-center">{children}</div>
 
           {/* Footer */}
           <div className="mt-16 text-center">
@@ -37,5 +36,5 @@ export default function RegisterLayout({
         </div>
       </div>
     </FormProvider>
-  )
-} 
+  );
+}

@@ -1,7 +1,13 @@
-import Link from 'next/link'
-import { Button } from '../components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
-import { ArrowRight, CheckCircle, Shield, Zap } from 'lucide-react'
+import Link from "next/link";
+import { Button } from "../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { ArrowRight, CheckCircle, Shield, Zap } from "lucide-react";
 
 export default function Home() {
   return (
@@ -13,8 +19,8 @@ export default function Home() {
             Multi-Step Registration
           </h1>
           <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Experience a seamless registration process with automatic data persistence, 
-            route-based navigation, and beautiful UI components.
+            Experience a seamless registration process with automatic data
+            persistence, route-based navigation, and beautiful UI components.
           </p>
           <div className="mt-8">
             <Link href="/register">
@@ -37,8 +43,9 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <CardDescription>
-                Your data is automatically saved to localStorage. Refresh the page, 
-                navigate between steps, or close your browser - your progress is preserved.
+                Your data is automatically saved to localStorage. Refresh the
+                page, navigate between steps, or close your browser - your
+                progress is preserved.
               </CardDescription>
             </CardContent>
           </Card>
@@ -52,7 +59,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <CardDescription>
-                Each step has its own URL. Use browser back/forward buttons, 
+                Each step has its own URL. Use browser back/forward buttons,
                 bookmark specific steps, or share direct links to form sections.
               </CardDescription>
             </CardContent>
@@ -67,8 +74,8 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <CardDescription>
-                Real-time validation with Zod schemas, route protection, 
-                and step-by-step validation gates to ensure data integrity.
+                Real-time validation with Zod schemas, route protection, and
+                step-by-step validation gates to ensure data integrity.
               </CardDescription>
             </CardContent>
           </Card>
@@ -117,18 +124,34 @@ export default function Home() {
 
         {/* Technical Stack */}
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Built With Modern Technologies</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            Built With Modern Technologies
+          </h2>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-            <span className="bg-white px-4 py-2 rounded-full shadow-sm">Next.js 15</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow-sm">React Hook Form</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow-sm">Zod Validation</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow-sm">shadcn/ui</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow-sm">TypeScript</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow-sm">Tailwind CSS</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow-sm">localStorage</span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">
+              Next.js 15
+            </span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">
+              React Hook Form
+            </span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">
+              Zod Validation
+            </span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">
+              shadcn/ui
+            </span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">
+              TypeScript
+            </span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">
+              Tailwind CSS
+            </span>
+            <span className="bg-white px-4 py-2 rounded-full shadow-sm">
+              localStorage
+            </span>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
